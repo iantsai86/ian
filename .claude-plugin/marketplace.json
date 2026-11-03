@@ -1,0 +1,12 @@
+{
+  "name": "tstack",
+  "description": "Marketplace for the tstack plugin",
+  "owner": { "name": "Ian Tsai" },
+  "plugins": [
+    {
+      "name": "tstack",
+      "source": "./",
+      "description": "Rigorous agent workflows for automation code: Python CI/CD scripts, CI YAML, and OpenTofu."
+    }
+  ]
+}

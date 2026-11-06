@@ -1,12 +1,12 @@
 # ian
 
-A Claude Code plugin for automation engineering: Python that runs in CI/CD pipelines, the CI YAML that calls it, and OpenTofu. Built for Claude Code in VS Code.
+A Claude Code plugin for CI/CD automation engineering: Python scripts, CI YAML configuration, and infrastructure as code (OpenTofu). Built for Claude Code in VS Code.
 
-Automation code runs unattended with real credentials. A mistake doesn't crash in front of anyone. It ships, reruns on every pipeline, and touches shared infrastructure. ian makes the agent work in a way where every claim can be checked. A guard asks you before the agent runs a shell command it recognizes as changing shared state, such as `tofu apply`, `git push`, or a merge. It reads shell commands only: MCP tool calls, CLIs it has no rule for (`kubectl`, `helm`, `databricks`), and whatever a script does inside are not checked.
+Automation code runs unattended with real credentials, so a mistake doesn't crash in front of anyone: it ships, reruns on every pipeline, and touches shared infrastructure. ian makes the agent back every claim with evidence, and its guard asks you before the agent runs a shell command it recognizes as changing shared state, such as `tofu apply`, `git push`, or a merge. The guard reads shell commands only; MCP tool calls, CLIs it has no rule for (`kubectl`, `helm`, `databricks`), and what a script does internally go unchecked.
 
 ## Install
 
-From GitHub (Claude Code uses your git credentials, so a private repo works over SSH):
+From GitHub:
 
 ```bash
 claude plugin marketplace add iantsai86/ian

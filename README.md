@@ -2,7 +2,7 @@
 
 A Claude Code plugin for automation engineering: Python that runs in CI/CD pipelines, the CI YAML that calls it, and OpenTofu. Built for Claude Code in VS Code.
 
-Automation code runs unattended with real credentials. A mistake doesn't crash in front of anyone. It ships, reruns on every pipeline, and touches shared infrastructure. ian makes the agent work in a way where every claim can be checked, and stops it before it changes anything shared without asking.
+Automation code runs unattended with real credentials. A mistake doesn't crash in front of anyone. It ships, reruns on every pipeline, and touches shared infrastructure. ian makes the agent work in a way where every claim can be checked. A guard asks you before the agent runs a shell command it recognizes as changing shared state, such as `tofu apply`, `git push`, or a merge. It reads shell commands only: MCP tool calls, CLIs it has no rule for (`kubectl`, `helm`, `databricks`), and whatever a script does inside are not checked.
 
 ## Install
 
@@ -75,8 +75,8 @@ The [principles](skills/work/principles.md) are fourteen short rules. Where a to
 |---|---|
 | No shell strings | `scripts/check_shell.py`, on the lines a change touches |
 | The plan is the change | `scripts/plan_summary.py`, which exits 2 on a delete nobody approved |
-| Explicit target, and state changes are code | `hooks/guard.py`, which asks before `az account set`, `tofu state rm`, and the rest |
-| Ask before changing shared state | `hooks/guard.py`: `tofu apply`/`destroy`, `git push`, merges, forge API writes, pipeline triggers, cloud CLI writes |
+| Explicit target, and state changes are code | `hooks/guard.py`, which asks before `az account set`, `aws configure set`, `tofu state` writes, `tofu import`, `taint`, and `force-unlock` |
+| Ask before changing shared state | `hooks/guard.py`: `tofu apply`/`destroy`, `git push`, `gh` and `glab` merges, API writes, and pipeline runs, `curl` write requests, and `az`/`aws` commands with a known write verb. Shell commands only; MCP tools are not checked. |
 | Every playbook is reachable and every link resolves | `scripts/check_skills.py`, in CI |
 
 The guard asks; it never blocks outright, so you stay in charge. It is a seatbelt for honest mistakes, not a sandbox.

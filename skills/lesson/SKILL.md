@@ -15,4 +15,4 @@ description: Turn a correction or a repeated mistake into something that prevent
 4. **Implement it, then prove it.** Run the new check against the bad version and paste the failure (P2 or higher).
 5. **If you changed ian:** work in a checkout of the ian repo, not the installed copy. Update the matching principle's "Enforced by" line, run `python3 scripts/check_skills.py` and `python3 -m pytest -q` there, and bump `version` in `.claude-plugin/plugin.json`.
 
-**Report:** the class with its evidence, the level you chose and why higher levels didn't work, and the proof.
+**Report:** the mistake class and its evidence, the chosen level and why each higher level fails, and the proof.

@@ -10,8 +10,8 @@ You are writing automation: Python that runs in pipelines, the CI YAML that call
 
 ## Start
 
-1. Restate the goal in one or two sentences, from the point of view of whoever depends on the result. Name the smallest change you expect to meet it. Don't wait for confirmation. If what you find contradicts the request, stop and show the evidence.
-2. Pick one playbook below. Open a todo list whose first items are that playbook's steps, word for word. A step you skip stays in the list as `skip: <reason>`.
+1. Restate the goal in one or two sentences, from the point of view of whoever depends on the result. Name the smallest change you think will achieve it, and start without asking for a go-ahead. If what you find contradicts the request, stop and show the evidence.
+2. Pick one playbook below. Start a todo list with that playbook's steps, copied word for word. Never delete a step you skip; mark it `skip: <reason>`.
 3. Read [principles.md](principles.md) once per task. Cite by number the principles that changed a decision.
 
 ## Playbooks

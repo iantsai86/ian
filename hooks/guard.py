@@ -254,7 +254,7 @@ def decide(payload: dict) -> Optional[dict]:
     if not reasons:
         return None
     unique = list(dict.fromkeys(reasons))
-    return ask("tstack guard: " + "; ".join(unique) + ".")
+    return ask("ian guard: " + "; ".join(unique) + ".")
 
 
 def ask(reason: str) -> dict:
@@ -272,7 +272,7 @@ def main() -> int:
         payload = json.load(sys.stdin)
         decision = decide(payload)
     except Exception as error:  # noqa: BLE001 - a broken guard must ask, not silently allow
-        decision = ask(f"tstack guard could not check this command ({type(error).__name__}: {error}).")
+        decision = ask(f"ian guard could not check this command ({type(error).__name__}: {error}).")
     if decision:
         json.dump(decision, sys.stdout)
     return 0

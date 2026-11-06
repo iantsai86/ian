@@ -11,8 +11,8 @@ description: Turn a correction or a repeated mistake into something that prevent
    2. Check: a script or lint rule that fails on the mistake (`${CLAUDE_PLUGIN_ROOT}/scripts/`, or the repo's own linter config).
    3. Test: a test that fails when the behavior regresses.
    4. Text: a playbook step or a principle. Use text only for judgment calls nothing can check.
-3. **Decide where it lives.** It goes in tstack when it holds for any repo. It goes in the repo (its agent instructions, lint config, or tests) when it is specific to that repo. Repo-specific facts never go into tstack.
+3. **Decide where it lives.** It goes in ian when it holds for any repo. It goes in the repo (its agent instructions, lint config, or tests) when it is specific to that repo. Repo-specific facts never go into ian.
 4. **Implement it, then prove it.** Run the new check against the bad version and paste the failure (P2 or higher).
-5. **If you changed tstack:** work in a checkout of the tstack repo, not the installed copy. Update the matching principle's "Enforced by" line, run `python3 scripts/check_skills.py` and `python3 -m pytest -q` there, and bump `version` in `.claude-plugin/plugin.json`.
+5. **If you changed ian:** work in a checkout of the ian repo, not the installed copy. Update the matching principle's "Enforced by" line, run `python3 scripts/check_skills.py` and `python3 -m pytest -q` there, and bump `version` in `.claude-plugin/plugin.json`.
 
 **Report:** the class with its evidence, the level you chose and why higher levels didn't work, and the proof.

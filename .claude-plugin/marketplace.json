@@ -1,10 +1,10 @@
 {
-  "name": "tstack",
-  "description": "Marketplace for the tstack plugin",
+  "name": "ian",
+  "description": "Marketplace for the ian plugin",
   "owner": { "name": "Ian Tsai" },
   "plugins": [
     {
-      "name": "tstack",
+      "name": "ian",
       "source": "./",
       "description": "Rigorous agent workflows for automation code: Python CI/CD scripts, CI YAML, and OpenTofu."
     }

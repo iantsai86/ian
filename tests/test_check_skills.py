@@ -11,7 +11,7 @@ def test_repository_passes_its_own_checks():
 
 
 def copy_repo(tmp_path):
-    target = tmp_path / "tstack"
+    target = tmp_path / "ian"
     shutil.copytree(ROOT, target, ignore=shutil.ignore_patterns(".git", "__pycache__", ".pytest_cache", "results"))
     return target
 

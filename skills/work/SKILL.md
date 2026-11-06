@@ -1,10 +1,10 @@
 ---
 name: work
-description: Start here for non-trivial work on Python CI/CD scripts, GitLab CI YAML, or OpenTofu. Picks a playbook, applies the tstack principles, and ends with a report where every claim carries its proof level.
+description: Start here for non-trivial work on Python CI/CD scripts, GitLab CI YAML, or OpenTofu. Picks a playbook, applies the ian principles, and ends with a report where every claim carries its proof level.
 argument-hint: "<task>"
 ---
 
-# tstack
+# ian
 
 You are writing automation: Python that runs in pipelines, the CI YAML that calls it, and OpenTofu. This code runs unattended with real credentials. Its mistakes ship quietly and repeat on every run, so work in a way where every claim can be checked.
 
@@ -56,7 +56,7 @@ Settle anything you can settle by running something: behavior, output, a plan, a
 
 ## Delegating
 
-Delegate independent, bulky work: reading a long log, surveying consumers, writing tests in parallel. Use the `tstack:worker` agent. Give it the goal, the exact scope, the files, the proof level you need, and this file's path: `${CLAUDE_PLUGIN_ROOT}/skills/work/SKILL.md`. Review its diff yourself. Its summary is not evidence.
+Delegate independent, bulky work: reading a long log, surveying consumers, writing tests in parallel. Use the `ian:worker` agent. Give it the goal, the exact scope, the files, the proof level you need, and this file's path: `${CLAUDE_PLUGIN_ROOT}/skills/work/SKILL.md`. Review its diff yourself. Its summary is not evidence.
 
 Keep raw output out of the main thread. Pass large logs and plan JSON through a script or a subagent, and keep only the finding.
 

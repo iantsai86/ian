@@ -1,8 +1,8 @@
 {
-  "name": "tstack",
-  "version": "0.1.0",
+  "name": "ian",
+  "version": "0.2.0",
   "description": "Rigorous agent workflows for automation code: Python CI/CD scripts, CI YAML, and OpenTofu. Playbooks, proof levels, and a guard that asks before anything shared changes.",
   "author": { "name": "Ian Tsai" },
-  "repository": "https://github.com/iantsai86/tstack",
+  "repository": "https://github.com/iantsai86/ian",
   "keywords": ["ci-cd", "opentofu", "terraform", "python", "gitlab-ci", "workflow"]
 }

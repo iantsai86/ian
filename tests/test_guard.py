@@ -67,7 +67,7 @@ def test_asks_for_commands_that_change_shared_state(command):
     output = decision["hookSpecificOutput"]
     assert output["hookEventName"] == "PreToolUse"
     assert output["permissionDecision"] == "ask"
-    assert output["permissionDecisionReason"].startswith("tstack guard: ")
+    assert output["permissionDecisionReason"].startswith("ian guard: ")
 
 
 @pytest.mark.parametrize(

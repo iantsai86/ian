@@ -1,36 +1,36 @@
-# tstack
+# ian
 
 A Claude Code plugin for automation engineering: Python that runs in CI/CD pipelines, the CI YAML that calls it, and OpenTofu.
 
-Automation code runs unattended with real credentials. A mistake doesn't crash in front of anyone. It ships, reruns on every pipeline, and touches shared infrastructure. tstack makes the agent work in a way where every claim can be checked, and stops it before it changes anything shared without asking.
+Automation code runs unattended with real credentials. A mistake doesn't crash in front of anyone. It ships, reruns on every pipeline, and touches shared infrastructure. ian makes the agent work in a way where every claim can be checked, and stops it before it changes anything shared without asking.
 
 ## Install
 
 From GitHub (Claude Code uses your git credentials, so a private repo works over SSH):
 
 ```bash
-claude plugin marketplace add iantsai86/tstack
-claude plugin install tstack@tstack
+claude plugin marketplace add iantsai86/ian
+claude plugin install ian@ian
 ```
 
 For one session from a local checkout, without installing:
 
 ```bash
-claude --plugin-dir ~/personal/tstack
+claude --plugin-dir path/to/ian
 ```
 
-Run `/reload-plugins` after editing. Don't also register the local checkout as a marketplace: two marketplaces can't share the name `tstack`.
+Run `/reload-plugins` after editing. Don't also register the local checkout as a marketplace: two marketplaces can't share the name `ian`.
 
-The plugin adds about 400 tokens to every session (`claude plugin details tstack`). The playbooks and principles load only when a skill runs.
+The plugin adds about 400 tokens to every session (`claude plugin details ian`). The playbooks and principles load only when a skill runs.
 
 ## Use
 
 Start a task with the router:
 
 ```text
-/tstack:work the upload script fails on Windows runners when the artifact name has a space. fix it.
-/tstack:work add a required `environment` input to the deploy template and reject unknown values.
-/tstack:work rename module.storage to module.artifacts in every state without recreating anything.
+/ian:work the upload script fails on Windows runners when the artifact name has a space. fix it.
+/ian:work add a required `environment` input to the deploy template and reject unknown values.
+/ian:work rename module.storage to module.artifacts in every state without recreating anything.
 ```
 
 The router restates your goal, picks a playbook, copies its steps into a todo list, and ends with a report in a fixed shape: goal, result, proof, not proven, principles, next.
@@ -39,10 +39,10 @@ You can also call the method skills directly:
 
 | Skill | Does |
 |---|---|
-| `/tstack:verify` | Runs the repo's lint and tests, `check_shell.py` on changed lines, YAML parsing, and `tofu fmt`, `validate`, `test`, and plan summary. |
-| `/tstack:impact` | Finds what a change breaks outside its diff, and proves the one fact it is safe because of. |
-| `/tstack:attack` | Three reviewers try to break the change through trust, failure, and contract lenses. Only findings proven by a run survive. |
-| `/tstack:lesson` | Turns a repeated mistake into a guard rule, a check, a test, or, last, text. |
+| `/ian:verify` | Runs the repo's lint and tests, `check_shell.py` on changed lines, YAML parsing, and `tofu fmt`, `validate`, `test`, and plan summary. |
+| `/ian:impact` | Finds what a change breaks outside its diff, and proves the one fact it is safe because of. |
+| `/ian:attack` | Three reviewers try to break the change through trust, failure, and contract lenses. Only findings proven by a run survive. |
+| `/ian:lesson` | Turns a repeated mistake into a guard rule, a check, a test, or, last, text. |
 
 ## Playbooks
 
@@ -105,7 +105,7 @@ claude plugin validate .
 
 ### Evals
 
-`evals/` holds cases for `claude plugin eval`. Each case runs with and without the plugin, so the report shows what tstack changes. Every run is a full Claude session billed to you, so start with one run per case:
+`evals/` holds cases for `claude plugin eval`. Each case runs with and without the plugin, so the report shows what ian changes. Every run is a full Claude session billed to you, so start with one run per case:
 
 ```bash
 claude plugin eval . --runs 1 --allow-tools Write Edit "Bash(python3:*)"

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check tstack's own structure: frontmatter, links, playbook coverage, manifests, and plugin-root paths.
+"""Check ian's own structure: frontmatter, links, playbook coverage, manifests, and plugin-root paths.
 
 Run from anywhere: `python3 scripts/check_skills.py [ROOT]`. Exit 1 lists every problem.
 """

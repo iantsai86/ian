@@ -1,7 +1,7 @@
 {
   "name": "ian",
-  "version": "0.2.1",
-  "description": "Agent workflows for automation code that back every claim with evidence: Python CI/CD scripts, CI YAML, and OpenTofu. Playbooks, proof levels, and a guard that asks before anything shared changes.",
+  "version": "0.2.2",
+  "description": "Agent workflows for automation code that back every claim with evidence: Python CI/CD scripts, CI YAML, and OpenTofu. Playbooks, proof levels, and a guard that asks before known shell commands change shared state.",
   "author": { "name": "Ian Tsai" },
   "repository": "https://github.com/iantsai86/ian",
   "license": "MIT",

@@ -48,11 +48,11 @@ The [verify](../verify/SKILL.md) skill runs them alongside the repo's own lint a
 
 ## Guard
 
-A hook asks the user before commands that change shared state: apply, state edits, pushes, merges, API writes, cloud CLI writes, and changes to a CLI's global default account. Don't work around it. Don't reshape a command to dodge the match, and don't switch tools to make the same write. When it asks, the user decides.
+A hook asks the user before shell commands it recognizes as changing shared state: `tofu` apply and state edits, pushes, merges, forge API writes and pipeline runs, `curl` writes, `az` and `aws` commands with a known write verb, and changes to a CLI's global default account. It reads shell commands only. MCP tool calls, CLIs it has no rule for (`kubectl`, `helm`, `databricks`), `az rest`, and writes made inside a script get no prompt; ask the user yourself before any of those change shared state. Don't work around it. Don't reshape a command to dodge the match, and don't switch tools to make the same write. When it asks, the user decides.
 
 ## Deciding
 
-Settle anything you can settle by running something: behavior, output, a plan, a test. Ask the user only about preferences, or about actions the guard covers. When you decide something the user might not expect, say what and why in the report.
+Settle anything you can settle by running something: behavior, output, a plan, a test. Ask the user only about preferences, or about actions that change shared state. When you decide something the user might not expect, say what and why in the report.
 
 ## Delegating
 

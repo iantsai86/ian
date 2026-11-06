@@ -1,6 +1,6 @@
 # ian
 
-A Claude Code plugin for automation engineering: Python that runs in CI/CD pipelines, the CI YAML that calls it, and OpenTofu. Built for Claude Code in VS Code; it is not a Cursor plugin.
+A Claude Code plugin for automation engineering: Python that runs in CI/CD pipelines, the CI YAML that calls it, and OpenTofu. Built for Claude Code in VS Code.
 
 Automation code runs unattended with real credentials. A mistake doesn't crash in front of anyone. It ships, reruns on every pipeline, and touches shared infrastructure. ian makes the agent work in a way where every claim can be checked, and stops it before it changes anything shared without asking.
 

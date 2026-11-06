@@ -6,7 +6,7 @@
     {
       "name": "ian",
       "source": "./",
-      "description": "Rigorous agent workflows for automation code: Python CI/CD scripts, CI YAML, and OpenTofu."
+      "description": "Agent workflows for automation code that back every claim with evidence: Python CI/CD scripts, CI YAML, and OpenTofu."
     }
   ]
 }

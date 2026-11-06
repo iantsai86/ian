@@ -1,11 +1,11 @@
 ---
 name: impact
-description: Find what a change to automation code breaks outside its diff - callers of a script, consumers of a CI template or OpenTofu module, and state addresses - and prove the one fact it is safe because of. Use before merging a change to anything shared, or when asked for the blast radius.
+description: Find what a change to automation code breaks outside its diff - callers of a script, consumers of a CI template or OpenTofu module, and state addresses - and prove the single fact its safety rests on. Use before merging a change to anything shared, or when asked for the blast radius.
 ---
 
 # Impact
 
-Listing call sites is the easy half. The job is to find the breakage a grep won't show, and to prove the one fact that makes the change safe.
+Listing call sites is the easy half. The job is to find the breakage a grep won't show, and to prove the single fact the change's safety rests on.
 
 1. **Name the contract surface the change touches**, before and after.
    - Script: CLI flags, environment variables read, exit codes, stdout lines other tools parse, files and artifact names written, and the external commands it runs.
@@ -18,7 +18,7 @@ Listing call sites is the easy half. The job is to find the breakage a grep won'
    - A new required input.
    - A changed exit code or output line.
    - A changed resource address. Without a `moved` block it becomes a delete and a create in every state.
-4. **Find the one fact the change is safe because of**, such as "no consumer sets this input" or "the new default equals the old effective value". Prove it at P2 or higher with a script, a test, or a plan that would fail if the fact were false.
+4. **Find the fact the change's safety rests on**, such as "no consumer sets this input" or "the new default equals the old effective value". Prove it at P2 or higher with a script, a test, or a plan that would fail if the fact were false.
 5. **Pick the canary:** the one consumer whose real run exercises the changed path. Name the job, and the log line that will show the change working.
 
 **Report:** a table of consumer, outcome, proof level, and evidence. Then the safety fact with its proof, the places you searched, and the canary.

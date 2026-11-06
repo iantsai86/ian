@@ -20,7 +20,7 @@ Each rule says when it applies, what to do, and what enforces it. A rule a tool 
 
 ## Behavior
 
-**7. Converge on rerun.** Any step that changes state. Read the current state and apply only the difference, so a rerun after a crash at any point reaches the same end state. Anything a run leaves behind must be recognizable as stale by the next run. *Enforced by a test that runs the step twice and sees the second run change nothing.*
+**7. Converge on rerun.** Any step that changes state. Read the current state and apply only the difference, so a rerun after a crash at any point reaches the same end state. Leave nothing behind that the next run cannot identify as stale. *Enforced by a test that runs the step twice and sees the second run change nothing.*
 
 **8. Fail loud.** A step can skip, fall back, or find nothing to do. A skipped required step exits non-zero. An allowed skip prints what it skipped and why, on its own line. A default that silently turns work off is a bug. Never report success for work that did not run. *Enforced by a test for each skip path.*
 
@@ -38,4 +38,4 @@ Each rule says when it applies, what to do, and what enforces it. A rule a tool 
 
 **13. Prove it where it runs.** Before you call anything done. A local pass is P2 or P3. Run the change where it will run, or say in the report that you didn't. A green pipeline proves the job passed, not that it did the work, so read the log line that shows the work. *Enforced by the report format.*
 
-**14. Encode the lesson.** The same mistake happens twice, or once with real damage. Make it impossible at the highest level that works: a guard rule, then a script or lint, then a test, then text. Run the lesson skill. *Enforced by the "Enforced by" line on every rule in this file.*
+**14. Encode the lesson.** The same mistake happens twice, or once with real damage. Make it impossible, choosing the highest level that can catch it: a guard rule, then a script or lint, then a test, then text. Run the lesson skill. *Enforced by the "Enforced by" line on every rule in this file.*

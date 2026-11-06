@@ -1,6 +1,6 @@
 # ian
 
-A Claude Code plugin for automation engineering: Python that runs in CI/CD pipelines, the CI YAML that calls it, and OpenTofu.
+A Claude Code plugin for automation engineering: Python that runs in CI/CD pipelines, the CI YAML that calls it, and OpenTofu. Built for Claude Code in VS Code; it is not a Cursor plugin.
 
 Automation code runs unattended with real credentials. A mistake doesn't crash in front of anyone. It ships, reruns on every pipeline, and touches shared infrastructure. ian makes the agent work in a way where every claim can be checked, and stops it before it changes anything shared without asking.
 
@@ -40,8 +40,8 @@ You can also call the method skills directly:
 | Skill | Does |
 |---|---|
 | `/ian:verify` | Runs the repo's lint and tests, `check_shell.py` on changed lines, YAML parsing, and `tofu fmt`, `validate`, `test`, and plan summary. |
-| `/ian:impact` | Finds what a change breaks outside its diff, and proves the one fact it is safe because of. |
-| `/ian:attack` | Three reviewers try to break the change through trust, failure, and contract lenses. Only findings proven by a run survive. |
+| `/ian:impact` | Finds what a change breaks outside its diff, and proves the single fact its safety rests on. |
+| `/ian:attack` | Three reviewers try to break the change through trust, failure, and contract lenses. A finding survives only if a run demonstrates it. |
 | `/ian:lesson` | Turns a repeated mistake into a guard rule, a check, a test, or, last, text. |
 
 ## Playbooks
@@ -119,3 +119,11 @@ claude plugin eval . --runs 1 --allow-tools Write Edit "Bash(python3:*)"
 In eval runs the guard's "ask" becomes a denial, because nobody is there to answer.
 
 When you change anything users get, bump `version` in `.claude-plugin/plugin.json`. Set it only there; `check_skills.py` fails if the marketplace entry sets it too.
+
+## Credits
+
+ian builds on [pstack](https://github.com/cursor/plugins/tree/main/pstack) by Lauren Tan, which is MIT-licensed. From pstack come the router that picks a playbook, principles written as standalone rules, and the ideas behind `impact` (pstack's `blast-radius`) and `attack` (pstack's `interrogate`). ian narrows that approach to CI scripts and OpenTofu, and adds proof levels (P0 to P4), the guard hook, `plan_summary.py`, `check_shell.py`, and evals.
+
+## License
+
+MIT. See [LICENSE](LICENSE).

@@ -4,6 +4,8 @@ A Claude Code plugin for CI/CD automation engineering: Python scripts, CI YAML c
 
 Automation code runs unattended with real credentials, so a mistake doesn't crash in front of anyone: it ships, reruns on every pipeline, and touches shared infrastructure. ian makes the agent back every claim with evidence, and its guard asks you before the agent runs a shell command it recognizes as changing shared state, such as `tofu apply`, `git push`, or a merge. The guard reads shell commands only; MCP tool calls, CLIs it has no rule for (`kubectl`, `helm`, `databricks`), and what a script does internally go unchecked.
 
+**Status:** maintained for my own use. Issues are welcome and may get fixed, but there's no promise of support, fixes, or a timeline.
+
 ## Install
 
 From GitHub:

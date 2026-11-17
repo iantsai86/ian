@@ -116,6 +116,7 @@ claude plugin eval . --runs 1 --allow-tools Write Edit "Bash(python3:*)"
 | Case | Checks |
 |---|---|
 | `shell-fix` | A shell-string bug is fixed with an argument list, a test is written, and the report says how each claim was verified. |
+| `shell-fix-routed` | The same task, with the prompt asking for ian's `work` skill. It measures what ian adds when it is used, apart from whether the model picks it on its own. |
 | `tofu-rename` | A rename that plans as a destroy gets a `moved` block, not an apply or a `state mv`. |
 
 In eval runs the guard's "ask" becomes a denial, because nobody is there to answer.

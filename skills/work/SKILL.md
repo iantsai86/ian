@@ -1,6 +1,6 @@
 ---
 name: work
-description: Start here for non-trivial work on Python CI/CD scripts, GitLab CI YAML, or OpenTofu. Picks a playbook, applies the ian principles, and ends with a report where every claim carries its proof level.
+description: Start here for any change or fix to Python CI/CD scripts, GitLab CI YAML, or OpenTofu, including small ones. Picks a playbook, applies the ian principles, and ends with a report where every claim carries its proof level.
 argument-hint: "<task>"
 ---
 
